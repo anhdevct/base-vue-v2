@@ -62,7 +62,7 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: '/public/index.html',
+      template: './public/index.html',
       filename: 'index.html',
       inject: true,
       minify: process.env.NODE_ENV === 'production' ? {

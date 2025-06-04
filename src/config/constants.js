@@ -1,5 +1,5 @@
 // API Configuration
-export const API_BASE_URL = process.env.VUE_APP_API_BASE_URL || 'http://localhost:3000/api'
+export const API_BASE_URL = (typeof process !== 'undefined' && process.env && process.env.VUE_APP_API_BASE_URL) || 'http://localhost:3000/api'
 export const API_TIMEOUT = 10000
 
 // App Configuration

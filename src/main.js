@@ -10,8 +10,12 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
+console.log('Vue app is starting...')
+
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  mounted() {
+  }
 }).$mount('#app') 
