@@ -1,15 +1,8 @@
+
 <template>
   <div class="home">
-    <el-container>
-      <el-header class="header">
-        <h1>{{ appName }}</h1>
-        <nav class="nav">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/users">Users</router-link>
-        </nav>
-      </el-header>
-      
+    <el-container class='is-vertical'>
+      <HeaderNav/>
       <el-main class="main">
         <el-row :gutter="20">
           <el-col :span="24">
@@ -67,86 +60,51 @@
 </template>
 
 <script>
-import { APP_NAME } from '@/config/constants'
-
-export default {
-  name: 'Home',
-  data() {
-    return {
-      appName: APP_NAME
+  import HeaderNav from '@/components/layout/HeaderNav.vue'
+  export default {
+    name: 'Home',
+    components: {
+      HeaderNav
     }
   }
-}
 </script>
 
 <style scoped>
-.home {
-  min-height: 100vh;
-}
+  .home {
+    min-height: 100vh;
+  }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #409eff;
-  color: white;
-  padding: 0 20px;
-}
+  .main {
+    padding: 20px;
+    background-color: #f5f7fa;
+  }
 
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-}
+  .welcome-card {
+    margin-bottom: 20px;
+  }
 
-.nav {
-  display: flex;
-  gap: 20px;
-}
+  .card-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
+  .feature-cards {
+    margin-top: 20px;
+  }
 
-.nav a:hover,
-.nav a.router-link-active {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+  .feature-card .el-card__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.main {
-  padding: 20px;
-  background-color: #f5f7fa;
-}
+  .feature-card .el-card__header i {
+    font-size: 20px;
+    color: #409eff;
+  }
 
-.welcome-card {
-  margin-bottom: 20px;
-}
-
-.card-header {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.feature-cards {
-  margin-top: 20px;
-}
-
-.feature-card .el-card__header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.feature-card .el-card__header i {
-  font-size: 20px;
-  color: #409eff;
-}
-
-.feature-card p {
-  color: #606266;
-  line-height: 1.6;
-}
+  .feature-card p {
+    color: #606266;
+    line-height: 1.6;
+  }
 </style> 

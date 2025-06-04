@@ -1,15 +1,7 @@
 <template>
   <div class="users">
-    <el-container>
-      <el-header class="header">
-        <h1>Users Management</h1>
-        <nav class="nav">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/users">Users</router-link>
-        </nav>
-      </el-header>
-      
+    <el-container class='is-vertical'>
+      <HeaderNav />
       <el-main class="main">
         <el-card>
           <div slot="header" class="card-header">
@@ -157,10 +149,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import { UserTypes, UserStatus, ValidationRules } from '@/types'
-import { DATE_FORMAT } from '@/config/constants'
+import HeaderNav from '@/components/layout/HeaderNav.vue'
 
 export default {
   name: 'Users',
+  components: {
+    HeaderNav
+  },
   data() {
     return {
       searchQuery: '',
@@ -390,38 +385,6 @@ export default {
 <style scoped>
 .users {
   min-height: 100vh;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #409eff;
-  color: white;
-  padding: 0 20px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.nav a:hover,
-.nav a.router-link-active {
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .main {

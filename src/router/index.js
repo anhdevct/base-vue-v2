@@ -20,6 +20,11 @@ const routes = [
     name: 'Users',
     component: () => import('@/views/Users.vue')
   },
+  {
+    path: '/todo-list',
+    name: 'TodoList',
+    component: () => import('@/views/TodoList.vue')
+  },
   // Catch-all route for 404
   {
     path: '*',

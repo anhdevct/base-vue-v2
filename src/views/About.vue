@@ -1,15 +1,7 @@
 <template>
   <div class="about">
-    <el-container>
-      <el-header class="header">
-        <h1>About</h1>
-        <nav class="nav">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/users">Users</router-link>
-        </nav>
-      </el-header>
-      
+    <el-container class='is-vertical'>
+      <HeaderNav/>
       <el-main class="main">
         <el-row :gutter="20">
           <el-col :span="16" :offset="4">
@@ -70,7 +62,7 @@
                 <div class="getting-started">
                   <p>To start development:</p>
                   <pre class="code-block">npm install
-npm run serve</pre>
+                  npm run serve</pre>
                   
                   <p>To build for production:</p>
                   <pre class="code-block">npm run build</pre>
@@ -86,8 +78,12 @@ npm run serve</pre>
 
 <script>
 import { APP_NAME, APP_VERSION, APP_DESCRIPTION } from '@/config/constants'
+import HeaderNav from '@/components/layout/HeaderNav.vue'
 
 export default {
+  components: {
+    HeaderNav
+  },
   name: 'About',
   data() {
     return {
